@@ -1,7 +1,14 @@
 const mongoose = require("mongoose");
 mongoose
-  .connect("mongodb://localhost/playground")
-  .then(() => console.log("connected to Mongodb"))
+
+  .connect(
+    "mongodb://mongo:onhhKAVlpbjxFgEfCmNoUHMDpdOOadgQ@mongodb.railway.internal:27017",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => console.log("connected to railway"))
   .catch((err) => console.error("couldn't connect to the mongodB...", err));
 
 const userSchema = new mongoose.Schema({
